@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Rozha_One, Gowun_Batang } from "next/font/google";
 import "./globals.css";
 import ClientScripts from "@/components/ClientScript";
 
@@ -11,6 +11,18 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const rozhaOne = Rozha_One({
+  variable: "--rozha-one",
+  weight: "400", // 허용된 값
+  subsets: ["latin"], // 허용된 값
+});
+
+const gowunBatang = Gowun_Batang({
+  variable: "--gowun-batang",
+  weight: ["400", "700"], // 배열로 여러 두께 설정 가능
+  subsets: ["latin"], // 허용된 값
 });
 
 export const metadata: Metadata = {
@@ -27,12 +39,10 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-        <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Rozha+One&display=swap" rel="stylesheet"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${rozhaOne.variable} ${gowunBatang.variable} antialiased`}
       >
         <ClientScripts />
         {children}

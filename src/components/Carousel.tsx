@@ -1,10 +1,23 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import React, { useState, useEffect, useCallback } from "react";
 
-const Carousel = ({ images, interval = 3000 }) => {
+const Carousel = ({ images, interval = 3000 } : { images: string[], interval?: number }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [startX, setStartX] = useState(0); // 터치 시작 위치
   const [endX, setEndX] = useState(0); // 터치 끝 위치
+
+  const nextSlide = useCallback(() => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  }, [images]);
+
+  const prevSlide = useCallback(() => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  }, [images]);
 
   // 자동 전환 효과
   useEffect(() => {
@@ -13,27 +26,15 @@ const Carousel = ({ images, interval = 3000 }) => {
     }, interval);
 
     return () => clearInterval(timer); // 컴포넌트 언마운트 시 정리
-  }, [currentIndex]);
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
+  }, [interval, nextSlide, currentIndex]);
 
   // 터치 시작
-  const handleTouchStart = (e) => {
+  const handleTouchStart = (e: React.TouchEvent) => {
     setStartX(e.touches[0].clientX);
   };
 
   // 터치 이동
-  const handleTouchMove = (e) => {
+  const handleTouchMove = (e: React.TouchEvent) => {
     setEndX(e.touches[0].clientX);
   };
 
@@ -63,7 +64,7 @@ const Carousel = ({ images, interval = 3000 }) => {
         }}
       >
         {images.map((src, index) => (
-          <img
+          <Image
             key={index}
             src={src}
             alt={`Slide ${index}`}

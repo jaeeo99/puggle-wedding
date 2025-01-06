@@ -2,6 +2,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import Script from "next/script";
 
+declare global {
+  interface Window {
+    naver: any;
+  }
+}
+
 const NaverMap = () => {
   const mapElement = useRef<HTMLDivElement | null>(null);
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
@@ -24,7 +30,7 @@ const NaverMap = () => {
       zoom: 16,
     });
 
-    naver.maps.Service.geocode({ query: address }, (status, response) => {
+    naver.maps.Service.geocode({ query: address }, (status: any, response: any) => {
       if (status !== naver.maps.Service.Status.OK) {
         console.error("주소 검색에 실패했습니다.");
         return;

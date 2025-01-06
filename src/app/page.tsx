@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
-import * as dayjs from "dayjs";
+import dayjs from "dayjs";
 import "dayjs/locale/ko";
 import Carousel from "@/components/Carousel";
 import NaverMap from "@/components/NaverMap";
@@ -316,7 +316,7 @@ export default function Home() {
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center p-5">
         <a
           className="flex gowun-batang-regular items-center justify-center gap-2 text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-          ahref="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
         >

@@ -1,6 +1,12 @@
 "use client";
 import React from "react";
 
+declare global {
+  interface Window {
+    Kakao: any;
+  }
+}
+
 const KakaoSharePage = () => {
   const shareToKakao = () => {
     if (!window.Kakao) {
