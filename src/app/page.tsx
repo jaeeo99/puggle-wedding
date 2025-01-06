@@ -53,9 +53,8 @@ export default function Home() {
       .then(() => {
         alert("문자가 복사되었습니다!");
       })
-      .catch((err) => {
+      .catch(() => {
         alert("복사에 실패했습니다. 다시 시도해주세요.");
-        console.error(err);
       });
   }, []);
 

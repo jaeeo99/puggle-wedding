@@ -68,6 +68,8 @@ const Carousel = ({ images, interval = 3000 } : { images: string[], interval?: n
             key={index}
             src={src}
             alt={`Slide ${index}`}
+            width={400}
+            height={500}
             className="w-full h-full object-cover"
           />
         ))}
