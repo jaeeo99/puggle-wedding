@@ -51,7 +51,7 @@ const Carousel = ({ images, interval = 3000 }: { images: string[]; interval?: nu
 
   return (
     <div
-      className="relative w-[440px] h-[660px] overflow-hidden mx-auto"
+      className="relative w-full overflow-hidden mx-auto"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
