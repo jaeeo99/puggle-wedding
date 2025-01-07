@@ -1,49 +1,68 @@
 "use client";
-import Image from "next/image";
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 
 const Carousel = ({ images, interval = 3000 }: { images: string[]; interval?: number }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [startX, setStartX] = useState(0); // 터치 시작 위치
-  const [endX, setEndX] = useState(0); // 터치 끝 위치
+  const [startX, setStartX] = useState(0);
+  const [endX, setEndX] = useState(0);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null); // Interval 추적
+  const isTransitioning = useRef(false); // 애니메이션 중복 방지
 
   const nextSlide = useCallback(() => {
+    if (isTransitioning.current) return; // 애니메이션 중일 경우 무시
+    isTransitioning.current = true;
+
     setCurrentIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
+
+    setTimeout(() => {
+      isTransitioning.current = false; // 애니메이션 종료 후 상태 초기화
+    }, 500); // 슬라이드 애니메이션 시간과 동일하게 설정
   }, [images]);
 
   const prevSlide = useCallback(() => {
+    if (isTransitioning.current) return; // 애니메이션 중일 경우 무시
+    isTransitioning.current = true;
+
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
+
+    setTimeout(() => {
+      isTransitioning.current = false; // 애니메이션 종료 후 상태 초기화
+    }, 500); // 슬라이드 애니메이션 시간과 동일하게 설정
   }, [images]);
 
-  // 자동 전환 효과
   useEffect(() => {
-    const timer = setInterval(() => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current); // 이전 Interval 제거
+    }
+
+    intervalRef.current = setInterval(() => {
       nextSlide();
     }, interval);
 
-    return () => clearInterval(timer); // 컴포넌트 언마운트 시 정리
-  }, [interval, nextSlide, currentIndex]);
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current); // 컴포넌트 언마운트 시 정리
+      }
+    };
+  }, [interval, nextSlide]);
 
-  // 터치 시작
   const handleTouchStart = (e: React.TouchEvent) => {
     setStartX(e.touches[0].clientX);
   };
 
-  // 터치 이동
   const handleTouchMove = (e: React.TouchEvent) => {
     setEndX(e.touches[0].clientX);
   };
 
-  // 터치 끝
   const handleTouchEnd = () => {
     if (startX - endX > 50) {
-      nextSlide(); // 왼쪽으로 스와이프
+      nextSlide();
     } else if (endX - startX > 50) {
-      prevSlide(); // 오른쪽으로 스와이프
+      prevSlide();
     }
     setStartX(0);
     setEndX(0);
@@ -64,13 +83,11 @@ const Carousel = ({ images, interval = 3000 }: { images: string[]; interval?: nu
         }}
       >
         {images.map((src, index) => (
-          <Image
+          <img
             key={index}
             src={src}
             alt={`Slide ${index}`}
-            width={440}
-            height={660}
-            className="w-[440px] h-[660px] object-cover"
+            className="w-[440px] h-[440px] object-cover"
           />
         ))}
       </div>

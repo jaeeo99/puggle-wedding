@@ -38,6 +38,13 @@ const NaverMap = () => {
       const map = new naver.maps.Map(mapElement.current!, {
         center: new naver.maps.LatLng(37.514575, 127.105144),
         zoom: 16,
+        draggable: false, // 드래그 비활성화
+        scrollWheel: false, // 스크롤 휠 비활성화
+        pinchZoom: false, // 핀치 줌 비활성화
+        keyboardShortcuts: false, // 키보드 단축키 비활성화
+        disableDoubleClickZoom: true,
+        disableDoubleTapZoom: true,
+        disableTwoFingerTapZoom: true,
       });
   
       naver.maps.Service.geocode({ query: address }, (status: any, response: any) => {

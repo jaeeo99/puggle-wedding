@@ -96,12 +96,9 @@ export default function Home() {
         </section>
         <section className="w-full flex flex-col items-center justify-center gap-6">
           <div className="relative w-full h-auto">
-            <Image
-              src="/wedding.jpg"
+            <img
+              src="https://modo-phinf.pstatic.net/20241026_36/1729952678712BjEQ3_JPEG/mosaPWOcXj.jpeg?type=w1100"
               alt="wedding image"
-              layout="intrinsic"
-              width={440}
-              height={500}
             />
           </div>
           <div className="flex flex-col gowun-batang-regular text-[16px] mr-[30px]">
@@ -122,7 +119,21 @@ export default function Home() {
             <h2 className="pretendard-regular font-secondary text-[18px]">GALLERY</h2>
             <h3 className="gowun-batang-regular font-primary text-[22px]">우리의 순간</h3>
           </div>
-          <Carousel images={Array.from({length: 10}).map(() => "/gallery_main.jpg")}/>
+          {/* <Carousel images={Array.from({length: 10}).map(() => "/gallery_main.jpg")}/> */}
+          <Carousel images={[
+            "https://modo-phinf.pstatic.net/20241026_84/1729953119356i6xSF_JPEG/mosa5Wx0mR.jpeg", 
+            "https://modo-phinf.pstatic.net/20241026_78/1729953120943N2r1P_JPEG/mosa8C3Cid.jpeg",
+            "https://modo-phinf.pstatic.net/20241026_40/1729953122223mvfKE_JPEG/mosaaBgKZe.jpeg",
+            "https://modo-phinf.pstatic.net/20241026_211/1729953123336aUKzR_JPEG/mosalKVywR.jpeg",
+            "https://modo-phinf.pstatic.net/20241026_149/1729953124596WoSQE_JPEG/mosaQZ27Js.jpeg",
+            "https://modo-phinf.pstatic.net/20241026_281/1729953125935KiUtV_JPEG/mosaXyC5GI.jpeg",
+            "https://modo-phinf.pstatic.net/20241026_40/1729953127270hpkXy_JPEG/mosaXAFKBi.jpeg",
+            "https://modo-phinf.pstatic.net/20241026_234/1729953128579ADWYa_JPEG/mosamFKI94.jpeg",
+            "https://modo-phinf.pstatic.net/20241026_190/1729953129914ae54a_JPEG/mosa4MpQKT.jpeg",
+            "https://modo-phinf.pstatic.net/20241026_216/1729953132308Cg6h6_JPEG/mosaaoYmif.jpeg",
+            "https://modo-phinf.pstatic.net/20241026_252/1729953133785c5FgE_JPEG/mosaBNQrCY.jpeg",
+            "https://modo-phinf.pstatic.net/20241026_61/1729953135215n3mOd_JPEG/mosa6YEpR2.jpeg"
+          ]}/>
           {/* <div className="relative w-full h-auto">
             <Image
               src="/gallery_main.jpg"
