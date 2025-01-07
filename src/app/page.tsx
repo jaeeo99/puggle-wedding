@@ -122,11 +122,8 @@ export default function Home() {
             <h2 className="pretendard-regular font-secondary text-[18px]">GALLERY</h2>
             <h3 className="gowun-batang-regular font-primary text-[22px]">우리의 순간</h3>
           </div>
-          <Carousel images={[
-    "/gallery_main.jpg",
-    "/gallery_main.jpg",
-    "/gallery_main.jpg"]}/>
-          <div className="relative w-full h-auto">
+          <Carousel images={Array.from({length: 10}).map(() => "/gallery_main.jpg")}/>
+          {/* <div className="relative w-full h-auto">
             <Image
               src="/gallery_main.jpg"
               alt="gallery image"
@@ -145,7 +142,7 @@ export default function Home() {
                 height={120}
               />
             </div>)}
-          </div>
+          </div> */}
         </section>
         <section id="schedule" className="w-full flex flex-col items-center justify-center gap-6">
           <div className="flex flex-col items-center">
@@ -216,23 +213,23 @@ export default function Home() {
               <span>너그러운 마음으로 양해 부탁드립니다.</span>
             </div>
           </div>
-          <div className="flex w-full px-5 flex-col items-center gowun-batang-regular text-[18px] gap-2">
+          <div className="flex w-full px-5 flex-col items-center gowun-batang-regular text-[18px] gap-4">
             <div className="flex items-center justify-center w-full h-[70px] bg-[rgba(246,209,180,0.2)] border-[rgba(215,170,129,1)] border-[1px] rounded-[10px]">신랑측 송금하기</div>
             <div className="flex w-full gap-2 px-2">
               <div className="flex flex-1 flex-col gowun-batang-regular text-[16px]">
                 <span>박진철</span>
                 <span>신한은행 110-243-217120</span>
               </div>
-              <div className="flex items-center justify-center w-[80px] h-[48px] pretendard-regular text-[16px] bg-[rgb(245,245,245)] rounded-[10px] cursor-pointer" onClick={() => handleCopy("110-243-217120")}>복사</div>
+              <div className="flex items-center justify-center w-[60px] h-[48px] pretendard-regular text-[14px] bg-[rgb(245,245,245)] rounded-[10px] cursor-pointer" onClick={() => handleCopy("110-243-217120")}>복사</div>
               <a
                 href="https://qr.kakaopay.com/Ej8Jh4QHd"
                 target="_blank">
-                <div className="flex items-center justify-center w-[80px] h-[48px] bg-[rgb(251,237,84)] rounded-[10px] cursor-pointer">
+                <div className="flex items-center justify-center w-[60px] h-[48px] bg-[rgb(251,237,84)] rounded-[10px] cursor-pointer">
                   <Image
                     className="inline"
                     src="/ic_kakaopay.png"
                     alt="kakaopay icon"
-                    width={60}
+                    width={40}
                     height={27}
                   />
                 </div>
@@ -243,13 +240,13 @@ export default function Home() {
                 <span>박문찬</span>
                 <span>신한은행 110-243-217120</span>
               </div>
-              <div className="flex items-center justify-center w-[80px] h-[48px] pretendard-regular text-[16px] bg-[rgb(245,245,245)] rounded-[10px] cursor-pointer" onClick={() => handleCopy("110-243-217120")}>복사</div>
-              <div className="flex items-center justify-center w-[80px] h-[48px] bg-[rgb(251,237,84)] rounded-[10px] cursor-pointer">
+              <div className="flex items-center justify-center w-[60px] h-[48px] pretendard-regular text-[14px] bg-[rgb(245,245,245)] rounded-[10px] cursor-pointer" onClick={() => handleCopy("110-243-217120")}>복사</div>
+              <div className="flex items-center justify-center w-[60px] h-[48px] bg-[rgb(251,237,84)] rounded-[10px] cursor-pointer">
                 <Image
                   className="inline"
                   src="/ic_kakaopay.png"
                   alt="kakaopay icon"
-                  width={60}
+                  width={40}
                   height={27}
                 />
               </div>
@@ -259,35 +256,35 @@ export default function Home() {
                 <span>박인향</span>
                 <span>신한은행 110-243-217120</span>
               </div>
-              <div className="flex items-center justify-center w-[80px] h-[48px] pretendard-regular text-[16px] bg-[rgb(245,245,245)] rounded-[10px] cursor-pointer" onClick={() => handleCopy("110-243-217120")}>복사</div>
-              <div className="flex items-center justify-center w-[80px] h-[48px] bg-[rgb(251,237,84)] rounded-[10px] cursor-pointer">
+              <div className="flex items-center justify-center w-[60px] h-[48px] pretendard-regular text-[14px] bg-[rgb(245,245,245)] rounded-[10px] cursor-pointer" onClick={() => handleCopy("110-243-217120")}>복사</div>
+              <div className="flex items-center justify-center w-[60px] h-[48px] bg-[rgb(251,237,84)] rounded-[10px] cursor-pointer">
                 <Image
                   className="inline"
                   src="/ic_kakaopay.png"
                   alt="kakaopay icon"
-                  width={60}
+                  width={40}
                   height={27}
                 />
               </div>
             </div>
           </div>
-          <div className="flex w-full px-5 flex-col items-center gowun-batang-regular text-[18px] gap-2">
+          <div className="flex w-full px-5 flex-col items-center gowun-batang-regular text-[18px] gap-4">
           <div className="flex items-center justify-center w-full h-[70px] bg-[rgba(246,209,180,0.2)] border-[rgba(215,170,129,1)] border-[1px] rounded-[10px]">신부측 송금하기</div>
             <div className="flex w-full gap-2 px-2">
               <div className="flex flex-1 flex-col gowun-batang-regular text-[16px]">
                 <span>임지혜</span>
                 <span>국민은행 564-02-0405-0787</span>
               </div>
-              <div className="flex items-center justify-center w-[80px] h-[48px] pretendard-regular text-[16px] bg-[rgb(245,245,245)] rounded-[10px] cursor-pointer" onClick={() => handleCopy("564-02-0405-0787")}>복사</div>
+              <div className="flex items-center justify-center w-[60px] h-[48px] pretendard-regular text-[14px] bg-[rgb(245,245,245)] rounded-[10px] cursor-pointer" onClick={() => handleCopy("564-02-0405-0787")}>복사</div>
               <a
                 href="https://qr.kakaopay.com/FcVbja2gc"
                 target="_blank">
-                <div className="flex items-center justify-center w-[80px] h-[48px] bg-[rgb(251,237,84)] rounded-[10px] cursor-pointer">
+                <div className="flex items-center justify-center w-[60px] h-[48px] bg-[rgb(251,237,84)] rounded-[10px] cursor-pointer">
                   <Image  
                     className="inline"
                     src="/ic_kakaopay.png"
                     alt="kakaopay icon"
-                    width={60}
+                    width={40}
                     height={27}
                   />
                 </div>
@@ -298,13 +295,13 @@ export default function Home() {
                 <span>임은영</span>
                 <span>국민은행 172-21-0027-758</span>
               </div>
-              <div className="flex items-center justify-center w-[80px] h-[48px] pretendard-regular text-[16px] bg-[rgb(245,245,245)] rounded-[10px] cursor-pointer" onClick={() => handleCopy("172-21-0027-758")}>복사</div>
-              <div className="flex items-center justify-center w-[80px] h-[48px] bg-[rgb(251,237,84)] rounded-[10px] cursor-pointer">
+              <div className="flex items-center justify-center w-[60px] h-[48px] pretendard-regular text-[14px] bg-[rgb(245,245,245)] rounded-[10px] cursor-pointer" onClick={() => handleCopy("172-21-0027-758")}>복사</div>
+              <div className="flex items-center justify-center w-[60px] h-[48px] bg-[rgb(251,237,84)] rounded-[10px] cursor-pointer">
                 <Image
                   className="inline"
                   src="/ic_kakaopay.png"
                   alt="kakaopay icon"
-                  width={60}
+                  width={40}
                   height={27}
                 />
               </div>
@@ -313,21 +310,6 @@ export default function Home() {
         </section>
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center p-5">
-        <a
-          className="flex gowun-batang-regular items-center justify-center gap-2 text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            className="dark:invert"
-            src="/vercel.svg"
-            alt="Vercel logomark"
-            width={20}
-            height={20}
-          />
-          카카오톡으로 초대장 보내기
-        </a>
         <KakaoSharePage />
       </footer>
     </div>

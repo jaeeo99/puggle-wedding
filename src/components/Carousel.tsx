@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React, { useState, useEffect, useCallback } from "react";
 
-const Carousel = ({ images, interval = 3000 } : { images: string[], interval?: number }) => {
+const Carousel = ({ images, interval = 3000 }: { images: string[]; interval?: number }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [startX, setStartX] = useState(0); // 터치 시작 위치
   const [endX, setEndX] = useState(0); // 터치 끝 위치
@@ -51,7 +51,7 @@ const Carousel = ({ images, interval = 3000 } : { images: string[], interval?: n
 
   return (
     <div
-      className="relative w-full h-[300px] overflow-hidden"
+      className="relative w-[440px] h-[660px] overflow-hidden mx-auto"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
@@ -68,9 +68,9 @@ const Carousel = ({ images, interval = 3000 } : { images: string[], interval?: n
             key={index}
             src={src}
             alt={`Slide ${index}`}
-            width={400}
-            height={500}
-            className="w-full h-full object-cover"
+            width={440}
+            height={660}
+            className="w-[440px] h-[660px] object-cover"
           />
         ))}
       </div>
@@ -78,7 +78,7 @@ const Carousel = ({ images, interval = 3000 } : { images: string[], interval?: n
       {/* 이전 버튼 */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-opacity-50 text-[rgba(234,176,122,1)] p-2 rounded-full"
       >
         &lt;
       </button>
@@ -86,7 +86,7 @@ const Carousel = ({ images, interval = 3000 } : { images: string[], interval?: n
       {/* 다음 버튼 */}
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-opacity-50 text-[rgba(234,176,122,1)] p-2 rounded-full"
       >
         &gt;
       </button>
@@ -97,7 +97,7 @@ const Carousel = ({ images, interval = 3000 } : { images: string[], interval?: n
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`w-3 h-3 rounded-full ${
+            className={`w-1 h-1 rounded-full ${
               currentIndex === index ? "bg-white" : "bg-gray-400"
             }`}
           />

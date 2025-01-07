@@ -85,14 +85,14 @@ const NaverMap = () => {
         onLoad={() => setIsScriptLoaded(true)}
       />
       <div ref={mapElement} id="map" style={{ width: "100%", height: "400px" }} />
-      <div className="flex space-x-4 justify-center items-center">
-        <button onClick={() => openMap("nmap://search?query=더%20베네치아%20웨딩홀", "https://map.naver.com/v5/search/더%20베네치아%20웨딩홀")}>
+      <div className="flex justify-center items-center m-[20px] gap-4">
+        <button className="rounded border-[1px] border-[#eaeaea] gowun-batang-regular w-[120px] h-[40px]" onClick={() => openMap("nmap://search?query=더%20베네치아%20웨딩홀", "https://map.naver.com/v5/search/더%20베네치아%20웨딩홀")}>
           네이버 지도
         </button>
-        <button onClick={() => openMap("kakaomap://search?q=더%20베네치아%20웨딩홀", "https://map.kakao.com/?q=더%20베네치아%20웨딩홀")}>
+        <button className="rounded border-[1px] border-[#eaeaea] gowun-batang-regular w-[120px] h-[40px]" onClick={() => openMap("kakaomap://search?q=더%20베네치아%20웨딩홀", "https://map.kakao.com/?q=더%20베네치아%20웨딩홀")}>
           카카오맵
         </button>
-        <button onClick={() => openMap("tmap://search?name=더%20베네치아%20웨딩홀", "https://www.tmap.co.kr/search/?searchKeyword=더%20베네치아%20웨딩홀")}>
+        <button className="rounded border-[1px] border-[#eaeaea] gowun-batang-regular w-[120px] h-[40px]" onClick={() => openMap("tmap://search?name=더%20베네치아%20웨딩홀", "https://www.tmap.co.kr/search/?searchKeyword=더%20베네치아%20웨딩홀")}>
           T맵
         </button>
       </div>

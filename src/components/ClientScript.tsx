@@ -21,7 +21,7 @@ const ClientScripts = () => {
         onLoad={() => {
           console.log("카카오 SDK 로드 완료");
           if (window.Kakao) {
-            window.Kakao.init("e3224affde953df1586e22f97fc48ebe"); // JavaScript 키 초기화
+            window.Kakao.init("231860e66b4d70e20227ec3249fca2ad"); // JavaScript 키 초기화
           }
         }}
       />
