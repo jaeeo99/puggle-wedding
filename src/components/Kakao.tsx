@@ -26,8 +26,8 @@ const KakaoShareButton = () => {
     window.Kakao.Link.sendCustom({
       templateId: 116059, // 템플릿 ID
       templateArgs: {
-        title: "공유 제목",
-        description: "공유 설명",
+        title: "박진철 · 임지혜",
+        description: "소중한분을 초대합니다.",
       },
     });
   };
@@ -40,7 +40,7 @@ const KakaoShareButton = () => {
       />
       <button
         onClick={shareCustomKakao}
-        className="flex items-center justify-center px-4 py-2 bg-[#FEE500] rounded-md text-black font-bold hover:opacity-90"
+        className="flex gowun-batang-regular items-center justify-center px-4 py-2 rounded-md text-black font-bold text-[16px] hover:opacity-90"
       >
         <img
           src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"

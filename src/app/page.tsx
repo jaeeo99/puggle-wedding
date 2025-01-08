@@ -60,9 +60,9 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center min-h-screen">
-      <main className="flex flex-col w-full gap-12 max-w-[440px] bg-white shadow-md rounded-lg pb-24">
-        <section id="cover" className="flex max-h-[800px] min-h-[600px] flex-col justify-between relative bg-cover bg-center" style={{ height: "90vh", backgroundImage: "url('/cover.jpg')", backgroundSize: "100%", backgroundPosition: "bottom" }}>
-          <div className="flex-1 flex flex-col items-center justify-center gap-6">
+      <main className="flex flex-col w-full gap-12 min-w-[360px] max-w-[440px] bg-[#fdfdfd] shadow-md rounded-lg pb-24">
+        <section id="cover" className="flex max-h-[800px] min-h-[600px] flex-col justify-between relative bg-cover bg-center" style={{ height: "90vh", backgroundImage: "url('./cover.jpg')", backgroundSize: "100%", backgroundPosition: "bottom" }}>
+          <div className="flex-1 flex flex-col items-center justify-center gap-6 z-10">
             <span className="rozha-one-regular flex flex-col gap-0 text-[80px] leading-[60px] text-white">
               <span>03</span>
               <span>29</span>
@@ -70,7 +70,17 @@ export default function Home() {
             <span className="pretendard-regular text-[18px] text-white">결혼식까지 {timeLeft.days}일 남았습니다</span>
             <span className="gowun-batang-regular text-[20px]">우리, 결혼합니다</span>
           </div>
-          <video className="w-full object-cover" autoPlay loop muted playsInline src="./cover.mp4"></video>
+          {/* <video className="w-full object-cover" autoPlay loop muted playsInline src="./cover.mp4"></video> */}
+          <div className="absolute inset-0 overflow-hidden">
+            <video
+              className="absolute bottom-0 left-0 w-full object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+              src="https://b01-kr-naver-vod.pstatic.net/blog/a/read/v2/VOD_ALPHA/blog/2D5D56035153213C757B463C2458197E492A/pd/1736298376241/base_pathfinder_pf3448100_c4364146-cd5c-11ef-89dd-a0369ffb37c0.mp4?_lsu_sa_=6e15f1faa1c463c6edd8459964a58ab13ef8370862004fd2366730cee7d335857827aa5664c59d0d009535222b372b9fb88b3dfb295a5612db2157a3520e7385d25e50883dc7a02c01062c98ce41f2fb&in_out_flag=1"
+            ></video>
+          </div>
         </section>
         <section className="w-full flex flex-col items-center justify-center gap-6">
           <span className="gowun-batang-bold text-[22px]">박진철 · 임지혜</span>
@@ -90,14 +100,15 @@ export default function Home() {
             <span>큰 사랑으로 키우고자 합니다. </span>
           </div>
           <div className="flex flex-col items-center gowun-batang-regular text-[18px] leading-[30px]">
-            <span>저희 두 사람이 사랑의 이름으로 지켜나갈 수 있게</span>
+            <span>저희 두 사람이 사랑의 이름으로</span>
+            <span>지켜나갈 수 있게</span>
             <span>앞날을 축복해 주시면 감사하겠습니다.</span>
           </div>
         </section>
         <section className="w-full flex flex-col items-center justify-center gap-6">
           <div className="relative w-full h-auto">
             <img
-              src="https://modo-phinf.pstatic.net/20241026_36/1729952678712BjEQ3_JPEG/mosaPWOcXj.jpeg?type=w1100"
+              src="https://modo-phinf.pstatic.net/20241026_36/1729952678712BjEQ3_JPEG/mosaPWOcXj.jpeg"
               alt="wedding image"
             />
           </div>
@@ -164,7 +175,7 @@ export default function Home() {
             <span className="gowun-batang-bold text-[22px]">2025.03.29</span>
             <span className="flex flex-col gowun-batang-regular items-center text-[18px] leading-[30px]">토요일 오후 2시 20분</span>
           </div>
-          <div className="mx-[60px] w-[calc(100%-120px)] py-[50px] border-[rgba(192, 169, 149, 0.5)] border-t-[1px] border-b-[1px]">
+          <div className="mx-auto w-[320px] py-[50px] border-[rgba(192, 169, 149, 0.5)] border-t-[1px] border-b-[1px]">
             <div className="calendar grid grid-cols-7 grid-rows-7 gowun-batang-regular text-[18px] text-center gap-2">
               <div>일</div>
               <div>월</div>
@@ -226,7 +237,7 @@ export default function Home() {
           </div>
           <div className="flex w-full px-5 flex-col items-center gowun-batang-regular text-[18px] gap-4">
             <div className="flex items-center justify-center w-full h-[70px] bg-[rgba(246,209,180,0.2)] border-[rgba(215,170,129,1)] border-[1px] rounded-[10px]">신랑측 송금하기</div>
-            <div className="flex w-full gap-2 px-2">
+            <div className="flex items-center w-full gap-2 px-2">
               <div className="flex flex-1 flex-col gowun-batang-regular text-[16px]">
                 <span>박진철</span>
                 <span>신한은행 110-243-217120</span>
@@ -246,7 +257,7 @@ export default function Home() {
                 </div>
               </a>
             </div>
-            <div className="flex w-full gap-2 px-2">
+            <div className="flex items-center w-full gap-2 px-2">
               <div className="flex flex-1 flex-col gowun-batang-regular text-[16px]">
                 <span>박문찬</span>
                 <span>신한은행 110-243-217120</span>
@@ -262,7 +273,7 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className="flex w-full gap-2 px-2">
+            <div className="flex items-center w-full gap-2 px-2">
               <div className="flex flex-1 flex-col gowun-batang-regular text-[16px]">
                 <span>박인향</span>
                 <span>신한은행 110-243-217120</span>
@@ -281,7 +292,7 @@ export default function Home() {
           </div>
           <div className="flex w-full px-5 flex-col items-center gowun-batang-regular text-[18px] gap-4">
           <div className="flex items-center justify-center w-full h-[70px] bg-[rgba(246,209,180,0.2)] border-[rgba(215,170,129,1)] border-[1px] rounded-[10px]">신부측 송금하기</div>
-            <div className="flex w-full gap-2 px-2">
+            <div className="flex items-center w-full gap-2 px-2">
               <div className="flex flex-1 flex-col gowun-batang-regular text-[16px]">
                 <span>임지혜</span>
                 <span>국민은행 564-02-0405-0787</span>
@@ -301,7 +312,7 @@ export default function Home() {
                 </div>
               </a>
             </div>
-            <div className="flex w-full gap-2 px-2">
+            <div className="flex items-center w-full gap-2 px-2">
               <div className="flex flex-1 flex-col gowun-batang-regular text-[16px]">
                 <span>임은영</span>
                 <span>국민은행 172-21-0027-758</span>
