@@ -62,7 +62,7 @@ export default function Home() {
     <div className="flex flex-col items-center min-h-screen">
       <main className="flex flex-col w-full gap-12 min-w-[360px] max-w-[440px] bg-[#fdfdfd] shadow-md rounded-lg pb-24">
         <section id="cover" className="flex max-h-[800px] min-h-[600px] flex-col justify-between relative bg-cover bg-center" style={{ height: "90vh", backgroundImage: "url('./cover.jpg')", backgroundSize: "100%", backgroundPosition: "bottom" }}>
-          <div className="flex-1 flex flex-col items-center justify-center gap-6 z-10">
+          <div className="flex-1 flex flex-col items-center justify-center gap-6 pb-12 z-10">
             <span className="rozha-one-regular flex flex-col gap-0 text-[80px] leading-[60px] text-white">
               <span>03</span>
               <span>29</span>
@@ -78,7 +78,7 @@ export default function Home() {
               loop
               muted
               playsInline
-              src="https://b01-kr-naver-vod.pstatic.net/blog/a/read/v2/VOD_ALPHA/blog/2D5D56035153213C757B463C2458197E492A/pd/1736298376241/base_pathfinder_pf3448100_c4364146-cd5c-11ef-89dd-a0369ffb37c0.mp4?_lsu_sa_=6e15f1faa1c463c6edd8459964a58ab13ef8370862004fd2366730cee7d335857827aa5664c59d0d009535222b372b9fb88b3dfb295a5612db2157a3520e7385d25e50883dc7a02c01062c98ce41f2fb&in_out_flag=1"
+              src="https://cedar-marketing.s3.ap-northeast-2.amazonaws.com/sample/background.mp4"
             ></video>
           </div>
         </section>
@@ -108,7 +108,7 @@ export default function Home() {
         <section className="w-full flex flex-col items-center justify-center gap-6">
           <div className="relative w-full h-auto">
             <img
-              src="https://modo-phinf.pstatic.net/20241026_36/1729952678712BjEQ3_JPEG/mosaPWOcXj.jpeg"
+              src="https://modo-phinf.pstatic.net/20250110_172/1736474624353UNwec_JPEG/mosa8lmRqX.jpeg"
               alt="wedding image"
             />
           </div>
@@ -132,18 +132,18 @@ export default function Home() {
           </div>
           {/* <Carousel images={Array.from({length: 10}).map(() => "/gallery_main.jpg")}/> */}
           <Carousel images={[
-            "https://modo-phinf.pstatic.net/20241026_84/1729953119356i6xSF_JPEG/mosa5Wx0mR.jpeg", 
-            "https://modo-phinf.pstatic.net/20241026_78/1729953120943N2r1P_JPEG/mosa8C3Cid.jpeg",
-            "https://modo-phinf.pstatic.net/20241026_40/1729953122223mvfKE_JPEG/mosaaBgKZe.jpeg",
-            "https://modo-phinf.pstatic.net/20241026_211/1729953123336aUKzR_JPEG/mosalKVywR.jpeg",
-            "https://modo-phinf.pstatic.net/20241026_149/1729953124596WoSQE_JPEG/mosaQZ27Js.jpeg",
-            "https://modo-phinf.pstatic.net/20241026_281/1729953125935KiUtV_JPEG/mosaXyC5GI.jpeg",
-            "https://modo-phinf.pstatic.net/20241026_40/1729953127270hpkXy_JPEG/mosaXAFKBi.jpeg",
-            "https://modo-phinf.pstatic.net/20241026_234/1729953128579ADWYa_JPEG/mosamFKI94.jpeg",
-            "https://modo-phinf.pstatic.net/20241026_190/1729953129914ae54a_JPEG/mosa4MpQKT.jpeg",
-            "https://modo-phinf.pstatic.net/20241026_216/1729953132308Cg6h6_JPEG/mosaaoYmif.jpeg",
-            "https://modo-phinf.pstatic.net/20241026_252/1729953133785c5FgE_JPEG/mosaBNQrCY.jpeg",
-            "https://modo-phinf.pstatic.net/20241026_61/1729953135215n3mOd_JPEG/mosa6YEpR2.jpeg"
+            "https://modo-phinf.pstatic.net/20241026_84/1729953119356i6xSF_JPEG/mosa5Wx0mR.jpeg?type=w720", 
+            "https://modo-phinf.pstatic.net/20241026_78/1729953120943N2r1P_JPEG/mosa8C3Cid.jpeg?type=w720",
+            "https://modo-phinf.pstatic.net/20241026_40/1729953122223mvfKE_JPEG/mosaaBgKZe.jpeg?type=w720",
+            "https://modo-phinf.pstatic.net/20241026_211/1729953123336aUKzR_JPEG/mosalKVywR.jpeg?type=w720",
+            "https://modo-phinf.pstatic.net/20241026_149/1729953124596WoSQE_JPEG/mosaQZ27Js.jpeg?type=w720",
+            "https://modo-phinf.pstatic.net/20241026_281/1729953125935KiUtV_JPEG/mosaXyC5GI.jpeg?type=w720",
+            "https://modo-phinf.pstatic.net/20241026_40/1729953127270hpkXy_JPEG/mosaXAFKBi.jpeg?type=w720",
+            "https://modo-phinf.pstatic.net/20241026_234/1729953128579ADWYa_JPEG/mosamFKI94.jpeg?type=w720",
+            "https://modo-phinf.pstatic.net/20241026_190/1729953129914ae54a_JPEG/mosa4MpQKT.jpeg?type=w720",
+            "https://modo-phinf.pstatic.net/20241026_216/1729953132308Cg6h6_JPEG/mosaaoYmif.jpeg?type=w720",
+            "https://modo-phinf.pstatic.net/20241026_252/1729953133785c5FgE_JPEG/mosaBNQrCY.jpeg?type=w720",
+            "https://modo-phinf.pstatic.net/20241026_61/1729953135215n3mOd_JPEG/mosa6YEpR2.jpeg?type=w720"
           ]}/>
           {/* <div className="relative w-full h-auto">
             <Image
@@ -260,34 +260,42 @@ export default function Home() {
             <div className="flex items-center w-full gap-2 px-2">
               <div className="flex flex-1 flex-col gowun-batang-regular text-[16px]">
                 <span>박문찬</span>
-                <span>신한은행 110-243-217120</span>
+                <span>국민은행 045-24-0000-146</span>
               </div>
               <div className="flex items-center justify-center w-[60px] h-[48px] pretendard-regular text-[14px] bg-[rgb(245,245,245)] rounded-[10px] cursor-pointer" onClick={() => handleCopy("110-243-217120")}>복사</div>
-              <div className="flex items-center justify-center w-[60px] h-[48px] bg-[rgb(251,237,84)] rounded-[10px] cursor-pointer">
-                <Image
-                  className="inline"
-                  src="/ic_kakaopay.png"
-                  alt="kakaopay icon"
-                  width={40}
-                  height={27}
-                />
-              </div>
+              <a
+                href="https://qr.kakaopay.com/Feti5OweO"
+                target="_blank">
+                <div className="flex items-center justify-center w-[60px] h-[48px] bg-[rgb(251,237,84)] rounded-[10px] cursor-pointer">
+                  <Image
+                    className="inline"
+                    src="/ic_kakaopay.png"
+                    alt="kakaopay icon"
+                    width={40}
+                    height={27}
+                  />
+                </div>
+              </a>
             </div>
             <div className="flex items-center w-full gap-2 px-2">
               <div className="flex flex-1 flex-col gowun-batang-regular text-[16px]">
                 <span>박인향</span>
-                <span>신한은행 110-243-217120</span>
+                <span>국민은행 045-21-0598-116</span>
               </div>
-              <div className="flex items-center justify-center w-[60px] h-[48px] pretendard-regular text-[14px] bg-[rgb(245,245,245)] rounded-[10px] cursor-pointer" onClick={() => handleCopy("110-243-217120")}>복사</div>
-              <div className="flex items-center justify-center w-[60px] h-[48px] bg-[rgb(251,237,84)] rounded-[10px] cursor-pointer">
-                <Image
-                  className="inline"
-                  src="/ic_kakaopay.png"
-                  alt="kakaopay icon"
-                  width={40}
-                  height={27}
-                />
-              </div>
+              <div className="flex items-center justify-center w-[60px] h-[48px] pretendard-regular text-[14px] bg-[rgb(245,245,245)] rounded-[10px] cursor-pointer" onClick={() => handleCopy("045-21-0598-116")}>복사</div>
+              <a
+                href="https://qr.kakaopay.com/FKBFcz60b"
+                target="_blank">
+                <div className="flex items-center justify-center w-[60px] h-[48px] bg-[rgb(251,237,84)] rounded-[10px] cursor-pointer">
+                  <Image
+                    className="inline"
+                    src="/ic_kakaopay.png"
+                    alt="kakaopay icon"
+                    width={40}
+                    height={27}
+                  />
+                </div>
+              </a>
             </div>
           </div>
           <div className="flex w-full px-5 flex-col items-center gowun-batang-regular text-[18px] gap-4">
@@ -318,15 +326,19 @@ export default function Home() {
                 <span>국민은행 172-21-0027-758</span>
               </div>
               <div className="flex items-center justify-center w-[60px] h-[48px] pretendard-regular text-[14px] bg-[rgb(245,245,245)] rounded-[10px] cursor-pointer" onClick={() => handleCopy("172-21-0027-758")}>복사</div>
-              <div className="flex items-center justify-center w-[60px] h-[48px] bg-[rgb(251,237,84)] rounded-[10px] cursor-pointer">
-                <Image
-                  className="inline"
-                  src="/ic_kakaopay.png"
-                  alt="kakaopay icon"
-                  width={40}
-                  height={27}
-                />
-              </div>
+              <a
+                href="https://qr.kakaopay.com/FGCNprqmg"
+                target="_blank">
+                <div className="flex items-center justify-center w-[60px] h-[48px] bg-[rgb(251,237,84)] rounded-[10px] cursor-pointer">
+                  <Image
+                    className="inline"
+                    src="/ic_kakaopay.png"
+                    alt="kakaopay icon"
+                    width={40}
+                    height={27}
+                  />
+                </div>
+              </a>
             </div>
           </div>
         </section>
