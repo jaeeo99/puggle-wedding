@@ -262,7 +262,7 @@ export default function Home() {
                 <span>박문찬</span>
                 <span>국민은행 045-24-0000-146</span>
               </div>
-              <div className="flex items-center justify-center w-[60px] h-[48px] pretendard-regular text-[14px] bg-[rgb(245,245,245)] rounded-[10px] cursor-pointer" onClick={() => handleCopy("110-243-217120")}>복사</div>
+              <div className="flex items-center justify-center w-[60px] h-[48px] pretendard-regular text-[14px] bg-[rgb(245,245,245)] rounded-[10px] cursor-pointer" onClick={() => handleCopy("045-24-0000-146")}>복사</div>
               <a
                 href="https://qr.kakaopay.com/Feti5OweO"
                 target="_blank">
@@ -305,7 +305,7 @@ export default function Home() {
                 <span>임지혜</span>
                 <span>국민은행 564302-04-050787</span>
               </div>
-              <div className="flex items-center justify-center w-[60px] h-[48px] pretendard-regular text-[14px] bg-[rgb(245,245,245)] rounded-[10px] cursor-pointer" onClick={() => handleCopy("564-02-0405-0787")}>복사</div>
+              <div className="flex items-center justify-center w-[60px] h-[48px] pretendard-regular text-[14px] bg-[rgb(245,245,245)] rounded-[10px] cursor-pointer" onClick={() => handleCopy("564302-04-050787")}>복사</div>
               <a
                 href="https://qr.kakaopay.com/FcVbja2gc"
                 target="_blank">
