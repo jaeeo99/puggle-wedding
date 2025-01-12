@@ -61,14 +61,16 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center min-h-screen">
       <main className="flex flex-col w-full gap-12 min-w-[360px] max-w-[440px] bg-[#fdfdfd] shadow-md rounded-lg pb-24">
-        <section id="cover" className="flex max-h-[800px] min-h-[600px] flex-col justify-between relative bg-cover bg-center" style={{ height: "90vh", backgroundImage: "url('./cover.jpg')", backgroundSize: "100%", backgroundPosition: "bottom" }}>
+        <section id="cover" className="flex max-h-[800px] min-h-[600px] flex-col justify-between relative bg-cover bg-center" style={{ height: "90vh", 
+          backgroundImage: "url('./cover.jpg')", 
+          backgroundSize: "100%", backgroundPosition: "bottom" }}>
           <div className="flex-1 flex flex-col items-center justify-center gap-6 pb-12 z-10">
             <span className="rozha-one-regular flex flex-col gap-0 text-[80px] leading-[60px] text-white">
               <span>03</span>
               <span>29</span>
             </span>
             <span className="pretendard-regular text-[18px] text-white">결혼식까지 {timeLeft.days}일 남았습니다</span>
-            <span className="gowun-batang-regular text-[20px]">우리, 결혼합니다</span>
+            <span className="gowun-batang-regular text-[20px] pb-20">우리, 결혼합니다</span>
           </div>
           {/* <video className="w-full object-cover" autoPlay loop muted playsInline src="./cover.mp4"></video> */}
           <div className="absolute inset-0 overflow-hidden">
@@ -78,7 +80,8 @@ export default function Home() {
               loop
               muted
               playsInline
-              src="https://cedar-marketing.s3.ap-northeast-2.amazonaws.com/sample/background.mp4"
+              // src="https://cedar-marketing.s3.ap-northeast-2.amazonaws.com/sample/background.mp4"
+              src="./background.mp4"
             ></video>
           </div>
         </section>
