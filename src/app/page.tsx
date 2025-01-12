@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useRef } from "react";
 import dayjs from "dayjs";
 import "dayjs/locale/ko";
 import Carousel from "@/components/Carousel";
@@ -9,6 +9,8 @@ import KakaoSharePage from "@/components/Kakao";
 dayjs.locale("ko");
 
 export default function Home() {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const placeholderRef = useRef<HTMLDivElement | null>(null);
   const [timeLeft, setTimeLeft] = useState({
     days: "00",
     hours: "00",
@@ -47,6 +49,28 @@ export default function Home() {
     return () => clearInterval(interval); // 컴포넌트 언마운트 시 정리
   }, []);
 
+
+  useEffect(() => {
+    const handleLoadedData = () => {
+      if (videoRef.current) {
+        videoRef.current.style.display = "block"; // 비디오 표시
+      }
+    };
+
+    // 비디오 이벤트 리스너 추가
+    const videoElement = videoRef.current;
+    if (videoElement) {
+      videoElement.addEventListener("loadeddata", handleLoadedData);
+    }
+
+    return () => {
+      // 컴포넌트 언마운트 시 이벤트 리스너 제거
+      if (videoElement) {
+        videoElement.removeEventListener("loadeddata", handleLoadedData);
+      }
+    };
+  }, []);
+
   const handleCopy = useCallback((text: string) => {
     navigator.clipboard
       .writeText(text)
@@ -69,13 +93,14 @@ export default function Home() {
               <span>03</span>
               <span>29</span>
             </span>
-            <span className="pretendard-regular text-[18px] text-white">결혼식까지 {timeLeft.days}일 남았습니다</span>
+            <span className="pretendard-regular text-[18px] text-white">결혼식까지 <b>{timeLeft.days}</b>일 남았습니다</span>
             <span className="gowun-batang-regular text-[20px]">우리, 결혼합니다</span>
           </div>
           {/* <video className="w-full object-cover" autoPlay loop muted playsInline src="./cover.mp4"></video> */}
           <div className="absolute inset-0 overflow-hidden">
             <video
-              className="absolute bottom-0 left-0 w-full object-cover"
+              ref={videoRef}
+              className="absolute bottom-0 left-0 w-full object-cover hidden"
               autoPlay
               loop
               muted
