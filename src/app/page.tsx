@@ -303,7 +303,7 @@ export default function Home() {
             <div className="flex items-center w-full gap-2 px-2">
               <div className="flex flex-1 flex-col gowun-batang-regular text-[16px]">
                 <span>임지혜</span>
-                <span>국민은행 564-02-0405-0787</span>
+                <span>국민은행 564302-04-050787</span>
               </div>
               <div className="flex items-center justify-center w-[60px] h-[48px] pretendard-regular text-[14px] bg-[rgb(245,245,245)] rounded-[10px] cursor-pointer" onClick={() => handleCopy("564-02-0405-0787")}>복사</div>
               <a
