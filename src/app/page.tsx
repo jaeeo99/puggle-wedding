@@ -10,6 +10,7 @@ dayjs.locale("ko");
 
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false); // 비디오 로드 상태
   const [timeLeft, setTimeLeft] = useState({
     days: "00",
     hours: "00",
@@ -48,27 +49,25 @@ export default function Home() {
     return () => clearInterval(interval); // 컴포넌트 언마운트 시 정리
   }, []);
 
-
   useEffect(() => {
     const handleLoadedData = () => {
-      if (videoRef.current) {
-        videoRef.current.style.display = "block"; // 비디오 표시
-      }
+      console.log("비디오 로드 완료");
+      setIsVideoLoaded(true);
     };
-
-    // 비디오 이벤트 리스너 추가
+  
     const videoElement = videoRef.current;
     if (videoElement) {
       videoElement.addEventListener("loadeddata", handleLoadedData);
+      videoElement.load(); // 명시적으로 비디오 로드 트리거
     }
-
+  
     return () => {
-      // 컴포넌트 언마운트 시 이벤트 리스너 제거
       if (videoElement) {
         videoElement.removeEventListener("loadeddata", handleLoadedData);
       }
     };
   }, []);
+
 
   const handleCopy = useCallback((text: string) => {
     navigator.clipboard
@@ -99,7 +98,10 @@ export default function Home() {
           <div className="absolute inset-0 overflow-hidden">
             <video
               ref={videoRef}
-              className="absolute bottom-0 left-0 w-full object-cover hidden"
+              className={`absolute bottom-0 left-0 w-full object-cover ${
+                isVideoLoaded ? "opacity-100" : "opacity-0"
+              }`}
+              preload="auto"
               autoPlay
               loop
               muted
