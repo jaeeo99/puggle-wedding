@@ -89,7 +89,7 @@ export default function Home() {
           backgroundImage: "url('./cover.jpg')", 
           backgroundSize: "100%", backgroundPosition: "bottom" }}>
           <div style={{ textShadow: '0 0 20px rgba(148, 173, 198, 0.8)'}} className="flex-1 flex flex-col items-center gap-6 py-20 z-10">
-            <span className="rozha-one-regular flex flex-col gap-0 text-[80px] leading-[60px] pt-[15px] text-white">
+            <span className="rozha-one-regular flex flex-col gap-0 text-[80px] leading-[60px] pt-[25px] text-white">
               <span>03</span>
               <span>29</span>
             </span>
